@@ -3,6 +3,8 @@ header("Content-Type: application/json");
 
 // Intentamos incluir el archivo de configuración para probar la conexión
 require_once 'config/database.php';
+require_once "../config/cors.php";
+
 
 // Si no hay errores en el require, la conexión fue exitosa
 echo json_encode([

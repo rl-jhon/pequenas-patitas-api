@@ -4,6 +4,7 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 // Incluye la conexión con la base de datos.
+require_once "../config/cors.php";
 require_once "../config/database.php";
 
 // Verifica que la solicitud sea de tipo POST.

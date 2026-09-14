@@ -5,6 +5,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // Incluye la conexión con la base de datos.
 require_once "../config/database.php";
+require_once "../config/cors.php";
+
 
 // Verifica que la solicitud sea de tipo GET.
 if ($_SERVER["REQUEST_METHOD"] !== "GET") {

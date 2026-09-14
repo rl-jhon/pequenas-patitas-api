@@ -3,6 +3,7 @@
 header("Content-Type: application/json; charset=UTF-8");
 
 // Importamos el archivo de conexión segura a MySQL
+require_once "../config/cors.php";
 require_once '../config/database.php';
 
 // Validamos que el método de la petición HTTP sea exclusivamente POST

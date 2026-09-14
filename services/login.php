@@ -4,6 +4,8 @@ header("Content-Type: application/json; charset=UTF-8");
 
 // Importamos el archivo de conexión segura a MySQL
 require_once '../config/database.php';
+require_once '../config/cors.php';
+
 
 // Validamos que el método de la petición HTTP sea exclusivamente POST
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -44,10 +46,16 @@ try {
         
         // Mensaje de éxito requerido por el caso de estudio de la guía
         http_response_code(200);
-        echo json_encode([
-            "status" => "success",
-            "message" => "Autenticación satisfactoria."
-        ]);
+echo json_encode([
+    "status" => "success",
+    "message" => "Autenticación satisfactoria.",
+    "user" => [
+        "id_usuario" => $user['id_usuario'],
+        "nombres" => $user['nombres'],
+        "apellidos" => $user['apellidos'],
+        "correo" => $user['correo']
+    ]
+]);
         
     } else {
         // Mensaje de error requerido por el caso de estudio de la guía (Corregido sin el http_code huérfano)
